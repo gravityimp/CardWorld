@@ -8,9 +8,9 @@ namespace CardConsole.Utils
 {
     public static class Deck
     {
-        public static List<string> GetDeck(bool shuffled)
+        public static List<string> GetDeck()
         {
-            string[] symbols = ["S", "H", "D", "C"];
+            List<string> symbols = ["S", "H", "D", "C"];
             List<string> cards = new List<string>();
 
             foreach (string symbol in symbols)

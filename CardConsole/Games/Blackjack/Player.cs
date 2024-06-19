@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CardConsole.Base
+namespace CardConsole.Games.Blackjack
 {
-    public enum PlayerStatus
+    internal class Player : Base.Player
     {
-        Alive = 0,
-        Dead = 1
+        public Player() : base() { }
     }
 }

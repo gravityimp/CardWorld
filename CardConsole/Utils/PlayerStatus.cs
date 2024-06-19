@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CardConsole.Base
+namespace CardConsole.Utils
 {
-    internal abstract class State
+    public enum PlayerStatus
     {
-        public State() { }
+        Alive = 0,
+        Dead = 1
     }
 }
