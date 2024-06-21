@@ -1,4 +1,5 @@
-﻿using CardConsole.Utils;
+﻿using CardConsole.Base.Interfaces;
+using CardConsole.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CardConsole.Base
 {
-    public abstract class Game<D, P>
+    public abstract class Game<D, P> : IGame
         where D : Dealer, new()
         where P : Player, new()
     {
@@ -35,6 +36,7 @@ namespace CardConsole.Base
                 return state;
             }
         }
+
         public int CurrentPlayer 
         {
             get {  return _currentPlayer; }
@@ -81,6 +83,11 @@ namespace CardConsole.Base
         public virtual List<string> GetLegalActions()
         {
             return Actions;
+        }
+
+        public Player GetCurrentPlayer()
+        {
+            return Players[CurrentPlayer];
         }
 
         protected virtual Dictionary<string, object> GetDefaultConfiguraiton(string game)
