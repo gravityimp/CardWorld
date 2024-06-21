@@ -81,7 +81,7 @@ namespace CardConsole.Games.Blackjack
                     Dealer.Visible.Add(Dealer.Deal());
                 }
             }
-            else
+            else if (Players[CurrentPlayer].Status == PlayerStatus.Dead)
             {
                 CurrentPlayer++;
             }

@@ -24,12 +24,13 @@ namespace CardConsole.Base
         {
             get
             {
+                bool isOver = IsOver();
                 Dictionary<string, object> state = new Dictionary<string, object>();
                 state["legal_actions"] = GetLegalActions();
                 state["actions"] = Actions;
                 state["player"] = CurrentPlayer;
-                state["player_cards"] = Players[CurrentPlayer].Cards;
-                state["is_over"] = IsOver();
+                state["player_cards"] = isOver ? Players.Select(player => player.Cards.ToList()) : Players[CurrentPlayer].Cards;
+                state["is_over"] = isOver;
 
                 return state;
             }
